@@ -1,0 +1,8 @@
+
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÎÒ£Üüÿÿÿÿ8§÷¯Ì,
+]squid:S1161":Add the "@Override" annotation above this method signature(“¦õøúÿÿÿÿ8§£“¯Ì,
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(¹º‡8§÷¯Ì,
+_squid:S1075"ARefactor your code to get this URI from a customizable parameter.(ëš8ëØ¯Ì,
+Fsquid:S1148""#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8—æ‘¯Ì,

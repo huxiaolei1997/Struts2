@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+    <package name="helloworld" extends="struts-default">
+        <interceptors>
+            <interceptor name="interceptor" class="com.struts2.action.Interceptor" />
+        </interceptors>
+        <action name="index">
+            <result>/WEB-INF/jsp/index.jsp</result>
+        </action>
+        <action name="hello"
+                class="com.struts2.action.HelloWorldAction"
+                method="execute">
+            <interceptor-ref name="params" />  <!-- 如果不设置这个 params 拦截器，那么请求参数将无法被发送给 action，然后你会发现 HelloWorldAction 中的 name 属性没有被设置，在 jsp 页面上取不到这个 name 值-->
+            <interceptor-ref name="interceptor" />
+            <result name="success" type="freemarker">
+                <param name="location">
+                    /WEB-INF/jsp/HelloWorld.ftl
+                </param>
+            </result>
+        </action>
+
+        <action name="upload" class="com.struts2.action.FileUploadAction" method="execute">
+            <!--<interceptor-ref name="fileUpload">-->
+                <!--<param name="allowedTypes">image/jpeg,image/gif</param>-->
+            <!--</interceptor-ref>-->
+            <result name="success">/WEB-INF/jsp/fileupload-success.jsp</result>
+            <result name="error">/WEB-INF/jsp/fileupload-error.jsp</result>
+        </action>
+    </package>
+</struts>

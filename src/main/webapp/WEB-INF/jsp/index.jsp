@@ -13,11 +13,16 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Hello World From Struts2</h1>
 <form action="hello" method="POST">
     <p>请输入你的用户名：</p>
     <input type="text" name="name"/>
     <input type="submit" value="Say Hello"/>
+</form>
+
+<form action="upload" method="post" enctype="multipart/form-data">
+    <label for="myFile">Upload your file</label>
+    <input type="file" name="myFile" />
+    <input type="submit" value="Upload"/>
 </form>
 </body>
 </html>

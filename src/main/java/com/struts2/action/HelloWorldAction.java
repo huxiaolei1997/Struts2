@@ -1,5 +1,11 @@
 package com.struts2.action;
 
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.util.ValueStack;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author 胡晓磊
  * @create 2018-07-03 16:18
@@ -17,6 +23,13 @@ public class HelloWorldAction {
     }
 
     public String execute() throws Exception {
+        ValueStack valueStack = ActionContext.getContext().getValueStack();
+        Map<String, Object> context = new HashMap<String, Object>();
+        context.put("key1", "value1");
+        context.put("key2", "value2");
+        valueStack.push(context);
+        System.out.println("Size of the valueStack: " + valueStack.size());
+        System.out.println("invoke execute()");
         return "success";
     }
 }
